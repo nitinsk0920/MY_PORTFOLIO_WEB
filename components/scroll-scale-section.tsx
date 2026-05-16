@@ -140,11 +140,10 @@ export function ScrollScaleImage({
     restDelta: 0.001,
   });
 
-  // Zoom in: scale 1.12 → 1.0 → 1.06 (enters zoomed, settles, exits zoomed)
-  // Zoom out: 1.0 → 1.1 throughout
-  const scale = mode === "in"
-    ? useTransform(smooth, [0, 0.4, 1], [1.14, 1.0, 1.08])
-    : useTransform(smooth, [0, 1], [1.0, 1.12]);
+  // Hooks must be called unconditionally — compute both, use the right one
+  const scaleIn  = useTransform(smooth, [0, 0.4, 1], [1.14, 1.0, 1.08]);
+  const scaleOut = useTransform(smooth, [0, 1], [1.0, 1.12]);
+  const scale    = mode === "in" ? scaleIn : scaleOut;
 
   const opacity = useTransform(smooth, [0, 0.12, 0.88, 1], [0, 1, 1, 0.6]);
 
