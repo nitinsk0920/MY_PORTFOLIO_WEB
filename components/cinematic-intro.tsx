@@ -94,7 +94,7 @@ export function CinematicIntro({ children }: CinematicIntroProps) {
 
     anime.timeline({ easing: "easeInOutQuart" })
       .add({
-        targets:  vignette,
+        targets:  vignette ?? [],
         opacity:  [0, 1],
         duration: 800,
         easing:   "easeInCubic",
