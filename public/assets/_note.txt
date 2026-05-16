@@ -1,0 +1,3 @@
+// This file intentionally triggers a copy via Next.js public folder convention.
+// The actual image is already at public/assets/vagabond.jpg
+// For the experience section we reference: /assets/vagabond.jpg
