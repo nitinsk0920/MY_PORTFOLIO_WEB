@@ -52,6 +52,26 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* ── Global Image Safety ──────────────────────── */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Mobile Section Spacing ───────────────────── */
+@media (max-width: 640px) {
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
 }
 
 ::selection {
@@ -302,7 +322,7 @@ a, button {
 }
 
 .skill-text {
-  font-size: clamp(4rem, 12vw, 10rem);
+  font-size: clamp(2.5rem, 8vw, 10rem);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.06);
   text-transform: uppercase;

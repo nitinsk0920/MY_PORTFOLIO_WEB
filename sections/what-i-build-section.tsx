@@ -43,7 +43,7 @@ export function WhatIBuildSection() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {WHAT_I_DO.map((area, index) => (
             <ScrollReveal key={area.title} delay={index * 80}>
-              <article className="border border-white/10 bg-black/30 p-6 h-full">
+              <article className="border border-white/10 bg-black/30 p-5 sm:p-6 h-full">
                 <div className="mb-5 h-px w-12 bg-white/25" />
                 <h3 className="font-heading text-xl font-bold text-foreground leading-snug">
                   {area.title}

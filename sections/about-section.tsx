@@ -13,8 +13,8 @@ export function AboutSection() {
   return (
     <section id="about" className="relative py-24 sm:py-32">
       <Container>
-        <div className="grid min-h-[min(80vh,720px)] items-stretch gap-0 lg:grid-cols-2">
-          <div className="flex flex-col justify-center py-12 pr-0 lg:py-16 lg:pr-14">
+        <div className="grid items-stretch gap-0 lg:grid-cols-2">
+          <div className="flex flex-col justify-center py-10 pr-0 lg:py-16 lg:pr-14">
             <ScrollReveal>
               <SectionHeader
                 eyebrow="Who I Am"
@@ -61,8 +61,8 @@ export function AboutSection() {
           </div>
 
           {/* Portrait */}
-          <ScrollScaleImage mode="in" className="relative min-h-[360px] lg:min-h-[min(80vh,720px)]">
-            <div className="relative h-full min-h-[360px] w-full lg:min-h-[min(80vh,720px)]">
+          <ScrollScaleImage mode="in" className="relative h-72 sm:h-96 lg:min-h-[600px]">
+            <div className="relative h-full w-full">
               <Image
                 src="/assets/m4.jpg"
                 alt="Nitin S Katagihallimath"

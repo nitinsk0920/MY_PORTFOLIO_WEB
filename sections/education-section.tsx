@@ -98,7 +98,7 @@ export function EducationSection() {
           </h3>
           <div className="space-y-4">
             {CERTIFICATIONS.map((cert) => (
-              <article key={cert.title} className="flex items-center justify-between gap-6 border border-white/10 bg-black/30 px-6 py-4">
+              <article key={cert.title} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border border-white/10 bg-black/30 px-6 py-4">
                 <div>
                   <p className="text-sm font-medium text-foreground">{cert.title}</p>
                   <p className="mt-0.5 text-xs text-muted">{cert.org}</p>

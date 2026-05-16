@@ -495,8 +495,8 @@ export function ProjectsSection() {
           </ScrollReveal>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2 lg:gap-8">
-            <ScrollReveal threshold={0.12} className="relative min-h-[420px] lg:min-h-[560px] overflow-hidden">
-              <div className="relative h-full min-h-[420px] w-full overflow-hidden lg:min-h-[560px]">
+            <ScrollReveal threshold={0.12} className="relative h-56 sm:h-80 lg:min-h-[560px] overflow-hidden">
+              <div className="relative h-full w-full overflow-hidden">
                 <motion.div style={{ y: heroImgY }} className="absolute inset-0">
                   <Image
                     src="/assets/m2.jpg"

@@ -110,7 +110,7 @@ export function SkillsSection() {
         </ScrollReveal>
       </Container>
 
-      <div aria-hidden className="relative my-8 h-44 overflow-hidden sm:my-10 sm:h-52 lg:h-56">
+      <div aria-hidden className="relative my-8 h-28 overflow-hidden sm:my-10 sm:h-44 lg:h-56">
         <div
           className="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden"
           style={{
