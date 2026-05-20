@@ -2,10 +2,17 @@ import type { Metadata } from "next";
 import { GlobalAtmosphere } from "@/components/global-atmosphere";
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import "./globals.css";
-import { Cormorant_Garamond, Manrope, Inter } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  Manrope,
+  Inter,
+  Playfair_Display,
+  Bebas_Neue,
+  DM_Serif_Display,
+} from "next/font/google";
 import { cn } from "@/lib/utils";
 
-// ── Cormorant Garamond — cinematic editorial serif for headings ──
+// ── Cormorant Garamond — cinematic editorial serif ───────────────
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-heading",
@@ -14,7 +21,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-// ── Manrope — clean modern sans for section labels / UI ─────────
+// ── Manrope — clean modern sans for section headings ────────────
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-display",
@@ -22,11 +29,37 @@ const manrope = Manrope({
   display: "swap",
 });
 
-// ── Inter — unchanged body / UI text ────────────────────────────
+// ── Inter — body / UI text ───────────────────────────────────────
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+// ── Playfair Display — classic editorial serif ───────────────────
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+// ── Bebas Neue — bold condensed display ─────────────────────────
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  variable: "--font-bebas",
+  weight: ["400"],
+  display: "swap",
+});
+
+// ── DM Serif Display — modern editorial serif ────────────────────
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+  weight: ["400"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -44,7 +77,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("dark", "font-sans", cormorant.variable, manrope.variable, inter.variable)}
+      className={cn(
+        "dark",
+        "font-sans",
+        cormorant.variable,
+        manrope.variable,
+        inter.variable,
+        playfair.variable,
+        bebas.variable,
+        dmSerif.variable,
+      )}
     >
       <body>
         <SmoothScrollProvider>

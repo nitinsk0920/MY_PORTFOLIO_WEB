@@ -22,6 +22,7 @@ type ProjectData = {
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  kaggleUrl?: string;
   deployment?: string;
 };
 
@@ -119,6 +120,7 @@ const PROJECTS: ProjectData[] = [
       "Achieved R2 = 0.34, RMSE = 0.77, MAE = 0.61 on Amazon ML Hackathon dataset",
     ],
     techStack: ["Python", "Scikit-learn", "XGBoost", "NLP", "Computer Vision"],
+    kaggleUrl: "https://www.kaggle.com/code/nitinkmath/multimodal-product-price-prediction",
   },
 ];
 
@@ -128,30 +130,48 @@ const PROJECTS: ProjectData[] = [
 function ProjectModal({
   project,
   onClose,
-  lenis,
 }: {
   project: ProjectData;
   onClose: () => void;
-  lenis: import("lenis").default | null;
 }) {
   const topLineRef = useRef<HTMLDivElement>(null);
   const closingRef = useRef(false);
   const [visible, setVisible] = useState(false);
+
+  // Ref for the scrollable content div so we can attach a wheel listener
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const handleClose = useCallback(() => {
     if (closingRef.current) return;
     closingRef.current = true;
     setVisible(false);
     setTimeout(() => {
-      document.body.style.overflow = "";
-      lenis?.start();
       onClose();
     }, 300);
-  }, [onClose, lenis]);
+  }, [onClose]);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
-    lenis?.stop();
+    // DO NOT call lenis.stop() — it blocks wheel events globally,
+    // including inside the modal's own scroll container.
+    // Instead we intercept wheel events on the scroll area directly
+    // and call preventDefault() to stop Lenis from seeing them.
+    const scrollEl = scrollAreaRef.current;
+
+    function onWheel(e: WheelEvent) {
+      if (!scrollEl) return;
+      const { scrollTop, scrollHeight, clientHeight } = scrollEl;
+      const atTop    = scrollTop === 0 && e.deltaY < 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
+      // Only prevent if the scroll container can still scroll in that direction
+      if (!atTop && !atBottom) {
+        e.stopPropagation(); // stop Lenis from seeing it
+        // do NOT preventDefault — let the element scroll natively
+      }
+    }
+
+    // Attach to the scroll element with capture so we intercept before Lenis
+    scrollEl?.addEventListener("wheel", onWheel, { passive: true, capture: true });
+
     const t = setTimeout(() => setVisible(true), 10);
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleClose();
@@ -176,10 +196,9 @@ function ProjectModal({
     return () => {
       clearTimeout(t);
       window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-      lenis?.start();
+      scrollEl?.removeEventListener("wheel", onWheel, { capture: true });
     };
-  }, [handleClose, lenis]);
+  }, [handleClose]);
 
   const btnGhost = {
     display: "inline-flex" as const,
@@ -353,6 +372,7 @@ function ProjectModal({
 
           {/* SCROLLABLE CONTENT - flex:1 + minHeight:0 is the critical fix */}
           <div
+            ref={scrollAreaRef}
             className="modal-scroll-area"
             style={{
               flex: 1,
@@ -370,6 +390,25 @@ function ProjectModal({
               >
                 {project.overview}
               </p>
+            )}
+
+            {project.kaggleUrl && (
+              <a
+                className="modal-item"
+                href={project.kaggleUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ ...btnMuted, marginBottom: "1.4rem", opacity: 0 }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "#2DD4BF"; e.currentTarget.style.borderColor = "rgba(45,212,191,0.4)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(148,163,184,0.85)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)"; }}
+              >
+                Kaggle Notebook
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
             )}
 
             <ul style={{ display: "flex", flexDirection: "column", gap: "0.85rem", padding: 0, margin: 0, listStyle: "none" }}>
@@ -544,7 +583,6 @@ export function ProjectsSection() {
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
-          lenis={lenis}
           onClose={() => setSelectedProject(null)}
         />
       )}

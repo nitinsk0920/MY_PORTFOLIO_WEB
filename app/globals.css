@@ -14,7 +14,8 @@
   --glow-white: 0 0 40px rgba(255, 255, 255, 0.08);
   --glow-soft: 0 0 24px rgba(255, 255, 255, 0.05);
   --font-content: var(--font-sans), "Inter", system-ui, sans-serif;
-  --font-heading: var(--font-heading), "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-heading), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-display), "Manrope", system-ui, sans-serif;
 }
 
 * {

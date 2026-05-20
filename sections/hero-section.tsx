@@ -9,6 +9,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { useSmoothScroll } from "@/components/smooth-scroll-provider";
+import { HeroNameCycle } from "@/components/hero-name-cycle";
 
 const RESUME_URL = "https://drive.google.com/file/d/11eVwAG66kxehpISvvDaAffs7P9ZP-OHq/view";
 
@@ -96,10 +97,11 @@ export function HeroSection() {
             background: "#000000",
           }}
         >
-          {/* ── MOBILE LAYOUT ── full-bg image + text overlay ── */}
+          {/* ══════════════════════════════════════
+              MOBILE LAYOUT
+              ══════════════════════════════════════ */}
           {isMobile && (
             <>
-              {/* Full-screen bg image */}
               <motion.div
                 style={{
                   position: "absolute",
@@ -112,7 +114,7 @@ export function HeroSection() {
               >
                 <Image
                   src="/assets/moonknight-hd.jpg"
-                  alt="Nitin S Katagihallimath"
+                  alt="NITIN.S.K"
                   fill
                   priority
                   quality={90}
@@ -121,29 +123,11 @@ export function HeroSection() {
                 />
               </motion.div>
 
-              {/* Heavy gradient overlay so text is readable */}
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  zIndex: 2,
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.25) 100%)",
-                  pointerEvents: "none",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  zIndex: 2,
-                  background:
-                    "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 60%)",
-                  pointerEvents: "none",
-                }}
-              />
+              {/* Gradient overlays */}
+              <div style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.82) 30%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.25) 100%)", pointerEvents: "none" }} />
+              <div style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 60%)", pointerEvents: "none" }} />
 
-              {/* Text content — bottom aligned on mobile */}
+              {/* Text — bottom aligned */}
               <motion.div
                 style={{ y: textY }}
                 variants={containerVariants}
@@ -154,7 +138,7 @@ export function HeroSection() {
                 <motion.p
                   variants={itemVariants}
                   style={{
-                    fontFamily: "var(--font-content)",
+                    fontFamily: "var(--font-sans)",
                     fontSize: "0.55rem",
                     fontWeight: 500,
                     letterSpacing: "0.24em",
@@ -166,32 +150,15 @@ export function HeroSection() {
                   AI/ML Enthusiast · AI Application Builder · Freelancer
                 </motion.p>
 
-                <motion.div
-                  variants={itemVariants}
-                  role="heading"
-                  aria-level={1}
-                  aria-label="Nitin S Katagihallimath"
-                  style={{ marginTop: "0.9rem" }}
-                >
-                  <h1
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      fontWeight: 300,
-                      fontSize: "clamp(2.6rem, 11vw, 4.5rem)",
-                      lineHeight: 0.95,
-                      color: "#ffffff",
-                      margin: 0,
-                      letterSpacing: "0.01em",
-                    }}
-                  >
-                    Nitin<br />S<br />Katagihallimath
-                  </h1>
+                {/* ── Cycling name — mobile ── */}
+                <motion.div variants={itemVariants} style={{ marginTop: "0.9rem" }}>
+                  <HeroNameCycle isMobile={true} />
                 </motion.div>
 
                 <motion.p
                   variants={itemVariants}
                   style={{
-                    fontFamily: "var(--font-content)",
+                    fontFamily: "var(--font-sans)",
                     fontSize: "0.8rem",
                     color: "#94A3B8",
                     marginTop: "0.9rem",
@@ -203,65 +170,17 @@ export function HeroSection() {
                   Building intelligent AI applications and immersive digital experiences.
                 </motion.p>
 
-                {/* CTA Buttons */}
                 <motion.div
                   variants={itemVariants}
                   style={{ display: "flex", gap: "0.6rem", marginTop: "1.2rem", flexWrap: "wrap" }}
                 >
-                  <button
-                    type="button"
-                    onClick={() => scrollTo("projects")}
-                    style={{
-                      fontFamily: "var(--font-content)",
-                      fontSize: "0.65rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.16em",
-                      textTransform: "uppercase",
-                      color: "#000000",
-                      background: "#FFFFFF",
-                      border: "1px solid #FFFFFF",
-                      padding: "0.55rem 1.1rem",
-                      cursor: "pointer",
-                    }}
-                  >
+                  <button type="button" onClick={() => scrollTo("projects")} style={{ fontFamily: "var(--font-sans)", fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#000000", background: "#FFFFFF", border: "1px solid #FFFFFF", padding: "0.55rem 1.1rem", cursor: "pointer" }}>
                     Explore Projects
                   </button>
-                  <a
-                    href={RESUME_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      fontFamily: "var(--font-content)",
-                      fontSize: "0.65rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.16em",
-                      textTransform: "uppercase",
-                      color: "#FFFFFF",
-                      background: "transparent",
-                      border: "1px solid rgba(255,255,255,0.4)",
-                      padding: "0.55rem 1.1rem",
-                      textDecoration: "none",
-                      display: "inline-block",
-                    }}
-                  >
+                  <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-sans)", fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#FFFFFF", background: "transparent", border: "1px solid rgba(255,255,255,0.4)", padding: "0.55rem 1.1rem", textDecoration: "none", display: "inline-block" }}>
                     Resume
                   </a>
-                  <button
-                    type="button"
-                    onClick={() => scrollTo("contact")}
-                    style={{
-                      fontFamily: "var(--font-content)",
-                      fontSize: "0.65rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.16em",
-                      textTransform: "uppercase",
-                      color: "#FFFFFF",
-                      background: "transparent",
-                      border: "1px solid rgba(255,255,255,0.4)",
-                      padding: "0.55rem 1.1rem",
-                      cursor: "pointer",
-                    }}
-                  >
+                  <button type="button" onClick={() => scrollTo("contact")} style={{ fontFamily: "var(--font-sans)", fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#FFFFFF", background: "transparent", border: "1px solid rgba(255,255,255,0.4)", padding: "0.55rem 1.1rem", cursor: "pointer" }}>
                     Contact
                   </button>
                 </motion.div>
@@ -269,10 +188,12 @@ export function HeroSection() {
             </>
           )}
 
-          {/* ── DESKTOP LAYOUT ── split 50/50 ── */}
+          {/* ══════════════════════════════════════
+              DESKTOP LAYOUT
+              ══════════════════════════════════════ */}
           {!isMobile && (
             <>
-              {/* Right Half — Portrait */}
+              {/* Right — portrait image */}
               <motion.div
                 style={{
                   position: "absolute",
@@ -307,7 +228,7 @@ export function HeroSection() {
                 ))}
               </motion.div>
 
-              {/* Left Half — Text */}
+              {/* Left — text content */}
               <motion.div
                 style={{
                   y: textY,
@@ -332,11 +253,12 @@ export function HeroSection() {
                   animate="visible"
                   style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}
                 >
+                  {/* Eyebrow */}
                   <motion.p
                     variants={itemVariants}
                     style={{
-                      fontFamily: "var(--font-content)",
-                      fontSize: "clamp(0.55rem, 0.9vw, 0.68rem)",
+                      fontFamily: "var(--font-sans)",
+                      fontSize: "clamp(0.62rem, 1vw, 0.76rem)",
                       fontWeight: 500,
                       letterSpacing: "0.28em",
                       textTransform: "uppercase",
@@ -347,94 +269,63 @@ export function HeroSection() {
                     AI/ML Enthusiast&nbsp;&bull;&nbsp;AI Application Builder&nbsp;&bull;&nbsp;Freelancer
                   </motion.p>
 
+                  {/* ── Cycling name — desktop ── */}
                   <motion.div
                     variants={itemVariants}
-                    role="heading"
-                    aria-level={1}
-                    aria-label="Nitin S Katagihallimath"
                     style={{
-                      position: "relative",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      width: "100%",
-                      margin: "clamp(1.2rem, 2.4vh, 2rem) 0 0",
-                      filter: "drop-shadow(0 0 14px rgba(255,255,255,0.22))",
+                      marginTop: "clamp(2rem, 4vh, 3.5rem)",
+                      filter: "drop-shadow(0 0 14px rgba(255,255,255,0.18))",
                     }}
                     whileHover={{
-                      scale: 1.015,
-                      filter: "drop-shadow(0 0 22px rgba(255,255,255,0.34))",
-                      transition: { type: "spring", stiffness: 180, damping: 18 },
+                      filter: "drop-shadow(0 0 24px rgba(255,255,255,0.32))",
+                      transition: { duration: 0.4 },
                     }}
                   >
-                    <h1
-                      style={{
-                        fontFamily: "var(--font-heading)",
-                        fontWeight: 300,
-                        fontSize: "clamp(3rem, 6.5vw, 6.5rem)",
-                        lineHeight: 0.95,
-                        color: "#ffffff",
-                        margin: 0,
-                        padding: 0,
-                        letterSpacing: "0.01em",
-                        textAlign: "left",
-                      }}
-                    >
-                      Nitin<br />S<br />Katagihallimath
-                    </h1>
+                    <HeroNameCycle isMobile={false} />
                   </motion.div>
 
+                  {/* Tagline */}
                   <motion.p
                     variants={itemVariants}
                     style={{
-                      fontFamily: "var(--font-content)",
-                      fontSize: "clamp(0.78rem, 1.2vw, 0.92rem)",
+                      fontFamily: "var(--font-sans)",
+                      fontSize: "clamp(0.92rem, 1.4vw, 1.08rem)",
                       letterSpacing: "0.04em",
                       color: "#94A3B8",
-                      marginTop: "clamp(1rem, 2vh, 1.6rem)",
+                      marginTop: "clamp(1.8rem, 3.5vh, 2.8rem)",
                       fontWeight: 300,
                       maxWidth: "36ch",
-                      lineHeight: 1.6,
+                      lineHeight: 1.65,
                     }}
                   >
                     Building intelligent AI applications and immersive digital experiences.
                   </motion.p>
 
+                  {/* Intro line */}
                   <motion.p
                     variants={itemVariants}
                     style={{
-                      fontFamily: "var(--font-content)",
-                      fontSize: "clamp(0.68rem, 1vw, 0.8rem)",
-                      color: "rgba(148,163,184,0.7)",
-                      marginTop: "clamp(0.6rem, 1.2vh, 1rem)",
+                      fontFamily: "var(--font-sans)",
+                      fontSize: "clamp(0.8rem, 1.1vw, 0.92rem)",
+                      color: "rgba(148,163,184,0.75)",
+                      marginTop: "clamp(0.8rem, 1.6vh, 1.3rem)",
                       fontWeight: 300,
                       maxWidth: "38ch",
-                      lineHeight: 1.65,
+                      lineHeight: 1.7,
                     }}
                   >
                     Exploring AI systems, LLM workflows, and modern application design using AI-assisted development tools.
                   </motion.p>
 
+                  {/* CTA Buttons */}
                   <motion.div
                     variants={itemVariants}
-                    style={{ display: "flex", gap: "0.75rem", marginTop: "clamp(1.4rem, 2.8vh, 2.2rem)", flexWrap: "wrap" }}
+                    style={{ display: "flex", gap: "0.85rem", marginTop: "clamp(2rem, 3.5vh, 2.8rem)", flexWrap: "wrap" }}
                   >
                     <button
                       type="button"
                       onClick={() => scrollTo("projects")}
-                      style={{
-                        fontFamily: "var(--font-content)",
-                        fontSize: "0.72rem",
-                        fontWeight: 600,
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "#000000",
-                        background: "#FFFFFF",
-                        border: "1px solid #FFFFFF",
-                        padding: "0.6rem 1.4rem",
-                        cursor: "pointer",
-                        transition: "all 0.2s ease",
-                      }}
+                      style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#000000", background: "#FFFFFF", border: "1px solid #FFFFFF", padding: "0.6rem 1.4rem", cursor: "pointer", transition: "all 0.2s ease" }}
                       onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.85)"; }}
                       onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "#FFFFFF"; }}
                     >
@@ -444,20 +335,7 @@ export function HeroSection() {
                       href={RESUME_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        fontFamily: "var(--font-content)",
-                        fontSize: "0.72rem",
-                        fontWeight: 600,
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "#FFFFFF",
-                        background: "transparent",
-                        border: "1px solid rgba(255,255,255,0.4)",
-                        padding: "0.6rem 1.4rem",
-                        textDecoration: "none",
-                        transition: "all 0.2s ease",
-                        display: "inline-block",
-                      }}
+                      style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#FFFFFF", background: "transparent", border: "1px solid rgba(255,255,255,0.4)", padding: "0.6rem 1.4rem", textDecoration: "none", transition: "all 0.2s ease", display: "inline-block" }}
                       onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#FFFFFF"; }}
                       onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.4)"; }}
                     >
@@ -466,19 +344,7 @@ export function HeroSection() {
                     <button
                       type="button"
                       onClick={() => scrollTo("contact")}
-                      style={{
-                        fontFamily: "var(--font-content)",
-                        fontSize: "0.72rem",
-                        fontWeight: 600,
-                        letterSpacing: "0.18em",
-                        textTransform: "uppercase",
-                        color: "#FFFFFF",
-                        background: "transparent",
-                        border: "1px solid rgba(255,255,255,0.4)",
-                        padding: "0.6rem 1.4rem",
-                        cursor: "pointer",
-                        transition: "all 0.2s ease",
-                      }}
+                      style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#FFFFFF", background: "transparent", border: "1px solid rgba(255,255,255,0.4)", padding: "0.6rem 1.4rem", cursor: "pointer", transition: "all 0.2s ease" }}
                       onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "#FFFFFF"; }}
                       onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.4)"; }}
                     >
@@ -515,7 +381,7 @@ export function HeroSection() {
             whileHover={{ color: "rgba(255,255,255,0.6)", scale: 1.08 }}
             aria-label="Scroll to about"
           >
-            <span style={{ fontFamily: "var(--font-content)", fontSize: "0.55rem", fontWeight: 600, letterSpacing: "0.36em", textTransform: "uppercase", color: "inherit" }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.55rem", fontWeight: 600, letterSpacing: "0.36em", textTransform: "uppercase", color: "inherit" }}>
               Scroll
             </span>
             <motion.svg

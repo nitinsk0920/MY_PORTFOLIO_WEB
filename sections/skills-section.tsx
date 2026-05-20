@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { FlipFadeHeading } from "@/components/flip-fade-heading";
 
 const SKILLS_MARQUEE = [
   "Python",
@@ -95,18 +96,19 @@ export function SkillsSection() {
     <section id="skills" className="relative overflow-hidden py-24 sm:py-32">
       <Container>
         <ScrollReveal>
-          <h2
+          <FlipFadeHeading
+            text="Skills"
+            as="h2"
             style={{
-              fontFamily: "var(--font-heading)",
-              fontSize: "clamp(3rem, 8vw, 6rem)",
-              fontWeight: 300,
-              letterSpacing: "-0.02em",
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
+              fontWeight: 700,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.0,
               color: "#FFFFFF",
               margin: 0,
-            }}
-          >
-            Skills
-          </h2>
+            } as React.CSSProperties}
+          />
         </ScrollReveal>
       </Container>
 
