@@ -45,7 +45,7 @@ export function WhatIBuildSection() {
             <ScrollReveal key={area.title} delay={index * 80}>
               <article className="border border-white/10 bg-black/30 p-5 sm:p-6 h-full">
                 <div className="mb-5 h-px w-12 bg-white/25" />
-                <h3 className="font-heading text-xl font-bold text-foreground leading-snug">
+                <h3 className="font-heading text-xl font-normal text-foreground leading-snug">
                   {area.title}
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-muted" style={{ fontWeight: 300 }}>

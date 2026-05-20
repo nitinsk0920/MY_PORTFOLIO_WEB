@@ -84,11 +84,11 @@ export function SectionHeader({
           titleClassName,
         )}
         style={{
-          fontFamily: "var(--font-display)",
-          fontWeight: 700,
+          fontFamily: "var(--font-heading)",
+          fontWeight: 400,
           fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
           color: "#FFFFFF",
-          letterSpacing: "-0.03em",
+          letterSpacing: "0",
           lineHeight: 1.0,
         } as React.CSSProperties}
       />

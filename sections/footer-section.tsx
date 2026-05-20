@@ -14,7 +14,7 @@ export function FooterSection() {
       <Container>
         <div className="flex flex-col items-center gap-8 text-center">
           <div>
-            <p className="font-heading text-2xl font-bold text-foreground">
+            <p className="font-heading text-2xl font-normal text-foreground">
               Nitin S Katagihallimath
             </p>
             <p className="mt-1 text-sm text-muted">

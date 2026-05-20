@@ -152,7 +152,7 @@ export function ProjectGridCard({
             fontSize:      "clamp(0.95rem, 1.8vw, 1.2rem)",
             color:         "#f5f5f5",
             marginTop:     "0.55rem",
-            letterSpacing: "-0.015em",
+            letterSpacing: "0",
             lineHeight:    1.25,
           }}
         >
@@ -320,10 +320,10 @@ export function ProjectGridCard({
           <h3
             style={{
               fontFamily:    "var(--font-heading)",
-              fontWeight:    300,
+              fontWeight:    400,
               fontSize:      "clamp(0.95rem, 1.8vw, 1.2rem)",
               color:         "rgba(255,255,255,0.9)",
-              letterSpacing: "-0.015em",
+              letterSpacing: "0",
               lineHeight:    1.25,
               margin:        0,
             }}

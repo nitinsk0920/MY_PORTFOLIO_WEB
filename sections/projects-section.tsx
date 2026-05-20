@@ -350,7 +350,7 @@ function ProjectModal({
                     {project.category}
                   </span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)", color: "#E2E8F0", letterSpacing: "-0.02em", lineHeight: 1.15, margin: 0 }}>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 400, fontSize: "clamp(1.1rem, 2.5vw, 1.6rem)", color: "#E2E8F0", letterSpacing: "0", lineHeight: 1.15, margin: 0 }}>
                   {project.title}
                 </h3>
               </div>

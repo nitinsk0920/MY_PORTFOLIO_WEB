@@ -63,7 +63,7 @@ export function EducationSection() {
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wider text-muted">{edu.degree}</p>
-                    <h3 className="mt-2 font-heading text-xl font-bold text-foreground sm:text-2xl">
+                    <h3 className="mt-2 font-heading text-xl font-normal text-foreground sm:text-2xl">
                       {edu.field}
                     </h3>
                     <p className="mt-1 text-sm text-muted">{edu.institution}</p>

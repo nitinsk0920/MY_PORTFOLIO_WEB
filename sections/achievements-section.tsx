@@ -63,7 +63,7 @@ function AchievementCard({
             color:         "#E2E8F0",
             lineHeight:    1.35,
             margin:        0,
-            letterSpacing: "-0.01em",
+            letterSpacing: "0",
           }}
         >
           {item.title}

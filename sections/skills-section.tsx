@@ -83,6 +83,7 @@ function SkillMarqueeRow({ reverse = false, duration, skills }: SkillMarqueeRowP
         <span
           key={`${skill}-${i}`}
           className="shrink-0 select-none font-heading text-[clamp(4rem,7vw,6.75rem)] font-light leading-none tracking-normal text-white/[0.075]"
+          style={{ fontFamily: "var(--font-heading-outline)" }}
         >
           {skill}
         </span>
@@ -100,10 +101,10 @@ export function SkillsSection() {
             text="Skills"
             as="h2"
             style={{
-              fontFamily: "var(--font-display)",
+              fontFamily: "var(--font-heading)",
               fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
-              fontWeight: 700,
-              letterSpacing: "-0.03em",
+              fontWeight: 400,
+              letterSpacing: "0",
               lineHeight: 1.0,
               color: "#FFFFFF",
               margin: 0,

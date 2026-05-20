@@ -105,7 +105,7 @@ export function ProjectCard({
                   <p className="text-xs font-medium uppercase text-slate-300">
                     {featured ? "Primary Archive" : "Project Archive"}
                   </p>
-                  <h3 className="mt-3 font-heading text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+                  <h3 className="mt-3 font-heading text-3xl font-normal leading-tight text-foreground sm:text-4xl">
                     {title}
                   </h3>
                 </div>

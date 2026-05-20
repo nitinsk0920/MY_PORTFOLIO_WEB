@@ -9,38 +9,38 @@ const FONT_CYCLE = [
   {
     // 1 — Cormorant Garamond: ultra-light cinematic serif
     fontFamily: "var(--font-heading)",
-    fontWeight: 300,
-    letterSpacing: "0.01em",
+    fontWeight: 400,
+    letterSpacing: "0",
     lineHeight: 0.92,
     textTransform: "none" as const,
-    label: "cormorant",
+    label: "orange-avenue-1",
   },
   {
     // 2 — Bebas Neue: bold condensed all-caps display
-    fontFamily: "var(--font-bebas)",
+    fontFamily: "var(--font-heading)",
     fontWeight: 400,
-    letterSpacing: "0.12em",
+    letterSpacing: "0",
     lineHeight: 0.88,
-    textTransform: "uppercase" as const,
-    label: "bebas",
+    textTransform: "none" as const,
+    label: "orange-avenue-2",
   },
   {
     // 3 — Playfair Display: classic editorial serif
-    fontFamily: "var(--font-playfair)",
+    fontFamily: "var(--font-heading)",
     fontWeight: 400,
-    letterSpacing: "-0.01em",
+    letterSpacing: "0",
     lineHeight: 0.95,
     textTransform: "none" as const,
-    label: "playfair",
+    label: "orange-avenue-3",
   },
   {
     // 4 — DM Serif Display: modern italic editorial
-    fontFamily: "var(--font-dm-serif)",
+    fontFamily: "var(--font-heading)",
     fontWeight: 400,
-    letterSpacing: "0.02em",
+    letterSpacing: "0",
     lineHeight: 0.94,
     textTransform: "none" as const,
-    label: "dm-serif",
+    label: "orange-avenue-4",
   },
 ] as const;
 

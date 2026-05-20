@@ -86,7 +86,7 @@ export function ExperienceSection() {
                           fontSize: "clamp(1.05rem, 2vw, 1.4rem)",
                           color: "#f5f5f5",
                           marginTop: "0.45rem",
-                          letterSpacing: "-0.02em",
+                          letterSpacing: "0",
                           lineHeight: 1.2,
                         }}
                       >

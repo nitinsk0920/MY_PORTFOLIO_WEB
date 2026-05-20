@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Orange Avenue";
+  src: url("/fonts/OrangeAvenueDEMO-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Orange Avenue Outline";
+  src: url("/fonts/OrangeAvenueOutlineDEMO-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── Design Tokens ─────────────────────────── */
 
 :root {
@@ -13,9 +29,10 @@
   --border: 255 255 255;
   --glow-white: 0 0 40px rgba(255, 255, 255, 0.08);
   --glow-soft: 0 0 24px rgba(255, 255, 255, 0.05);
-  --font-content: var(--font-sans), "Inter", system-ui, sans-serif;
-  --font-heading: var(--font-heading), "Cormorant Garamond", Georgia, serif;
-  --font-display: var(--font-display), "Manrope", system-ui, sans-serif;
+  --font-content: var(--font-sans), "Manrope", system-ui, sans-serif;
+  --font-heading: "Orange Avenue", "Cormorant Garamond", Georgia, serif;
+  --font-heading-outline: "Orange Avenue Outline", "Orange Avenue", Georgia, serif;
+  --font-display: "Orange Avenue", "Cormorant Garamond", Georgia, serif;
 }
 
 * {
@@ -84,17 +101,28 @@ img {
 h1, h2, h3 {
   font-family: var(--font-heading);
   color: #ffffff;
-  font-weight: 300;
+  font-weight: 400;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+}
+
+h1 span,
+h2 span,
+h3 span,
+.font-heading span {
+  font-family: inherit;
 }
 
 h4, h5, h6,
-p, span, li, a, button, input, label, small {
+p, li, a, button, input, label, small {
   font-family: var(--font-content);
   font-feature-settings: "kern" 1;
+}
+
+span {
+  font-family: inherit;
 }
 
 /* ── Text Utilities ──────────────────────────────────────── */

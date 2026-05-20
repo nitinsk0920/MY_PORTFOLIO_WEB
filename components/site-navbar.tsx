@@ -74,8 +74,8 @@ export function SiteNavbar() {
             style={{
               fontFamily: "var(--font-heading)",
               color: "#FFFFFF",
-              letterSpacing: "-0.02em",
-              fontWeight: 700,
+              letterSpacing: "0",
+              fontWeight: 400,
               fontSize: "1.05rem",
               textDecoration: "none",
             }}
@@ -190,8 +190,8 @@ export function SiteNavbar() {
                       style={{
                         fontFamily: "var(--font-heading)",
                         fontSize: "clamp(1.8rem, 8vw, 2.5rem)",
-                        fontWeight: 300,
-                        letterSpacing: "0.02em",
+                        fontWeight: 400,
+                        letterSpacing: "0",
                         color: "#FFFFFF",
                         textDecoration: "none",
                         display: "block",

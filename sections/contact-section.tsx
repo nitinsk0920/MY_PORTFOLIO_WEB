@@ -93,7 +93,7 @@ function SocialCard({ title, name, pitch, icon, buttons }: SocialCardProps) {
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-muted">
             {title}
           </p>
-          <h3 className="mt-4 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+          <h3 className="mt-4 font-heading text-2xl font-normal tracking-normal text-foreground sm:text-3xl">
             {name}
           </h3>
           <p className="mt-5 max-w-sm text-sm leading-7 text-muted">
