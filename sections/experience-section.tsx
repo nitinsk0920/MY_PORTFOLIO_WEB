@@ -24,7 +24,6 @@ const EXPERIENCE = [
       "Deployment workflows",
       "AI-assisted development",
     ],
-    also: ["CoDe-DuINo AI Arduino Assistant project"],
     note: "Also designed immersive portfolio and web experiences using AI-assisted tools and cinematic visual inspirations.",
   },
 ];
@@ -131,21 +130,6 @@ export function ExperienceSection() {
                   </p>
                 </ScrollReveal>
 
-                {/* Also deployed */}
-                <ScrollReveal delay={200} className="mt-5">
-                  <div className="border border-white/10 p-4">
-                    <p className="text-xs font-medium uppercase tracking-wider text-muted">
-                      Also Deployed
-                    </p>
-                    <ul className="mt-2 flex flex-wrap gap-2">
-                      {exp.also.map((item) => (
-                        <li key={item} className="text-sm text-foreground/85" style={{ fontWeight: 300 }}>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </ScrollReveal>
               </div>
             ))}
           </div>

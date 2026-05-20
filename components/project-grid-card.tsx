@@ -127,7 +127,7 @@ export function ProjectGridCard({
           ════════════════════════════════════════════════ */}
       <div
         className="absolute inset-0 flex flex-col border border-white/10 bg-black/60 p-5 sm:p-6"
-        style={{ zIndex: 1 }}
+        style={{ zIndex: 1, overflow: "hidden" }}
       >
         {/* Category */}
         <p
