@@ -59,6 +59,8 @@ const PROJECTS: ProjectData[] = [
       "Developed LangGraph + FastAPI pipeline with Streamlit UI for prediction, risk scoring, and report generation",
     ],
     techStack: ["PyTorch", "FastAPI", "LangGraph", "Streamlit"],
+    githubUrl: "https://github.com/nitinsk0920/ORAL_CAVITY_CANCER_MULTICLASSIFICATION.git",
+    deployment: "Successfully deployed for usage.",
   },
   {
     title: "CoDe-DuINo - AI Arduino Development Assistant",
@@ -185,14 +187,16 @@ function ProjectModal({
       duration: 500,
       easing: "easeOutCubic",
     });
-    anime({
-      targets: topLineRef.current,
-      scaleX: [0, 1],
-      opacity: [0, 1],
-      duration: 600,
-      delay: 120,
-      easing: "easeOutExpo",
-    });
+    if (topLineRef.current) {
+      anime({
+        targets: topLineRef.current,
+        scaleX: [0, 1],
+        opacity: [0, 1],
+        duration: 600,
+        delay: 120,
+        easing: "easeOutExpo",
+      });
+    }
     return () => {
       clearTimeout(t);
       window.removeEventListener("keydown", onKey);
