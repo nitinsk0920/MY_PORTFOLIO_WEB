@@ -41,7 +41,7 @@ const SKILL_COLUMNS = [
   },
   {
     title: "Tools & Frameworks",
-    items: ["LangChain", "LangGraph", "FastAPI", "Supabase", "PostgreSQL", "MCP", "Docker", "Streamlit"],
+    items: ["LangChain", "LangGraph", "FastAPI", "Supabase", "PostgreSQL", "MCP", "Docker", "Streamlit","n8n"],
   },
   {
     title: "LIBRARIES & TOOLS",
