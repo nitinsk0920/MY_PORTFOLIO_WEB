@@ -40,6 +40,11 @@ const CERTIFICATIONS = [
     org: "DeepLearning.AI · Coursera",
     certLink: "https://coursera.org/share/2e94b0a3326fd02d761f81c76988889d",
   },
+  {
+    title: "AI Research Internship– CAIR Lab (Centre for AI Research)",
+    org: "Certificate",
+    certLink: "https://drive.google.com/file/d/1opQBz2KwUkZXSk7WRQVJStwLKtKK4Fxf/view?usp=sharing",
+  },
 ];
 
 export function EducationSection() {
