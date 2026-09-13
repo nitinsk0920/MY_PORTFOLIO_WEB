@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useSmoothScroll } from "@/components/smooth-scroll-provider";
 
-const RESUME_URL = "https://drive.google.com/file/d/11eVwAG66kxehpISvvDaAffs7P9ZP-OHq/view";
+const RESUME_URL = "/assets/Nitin_HS_resume.pdf";
 
 const NAV_LINKS = [
   { label: "About",      href: "#about" },

@@ -11,7 +11,7 @@ import {
 import { useSmoothScroll } from "@/components/smooth-scroll-provider";
 import { HeroNameCycle } from "@/components/hero-name-cycle";
 
-const RESUME_URL = "https://drive.google.com/file/d/11eVwAG66kxehpISvvDaAffs7P9ZP-OHq/view";
+const RESUME_URL = "/assets/Nitin_HS_resume.pdf";
 
 const containerVariants = {
   hidden: {},
